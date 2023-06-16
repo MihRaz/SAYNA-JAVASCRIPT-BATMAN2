@@ -8,7 +8,7 @@ body {
     background-color: black;
 }
 
-/* Les polices */
+// Les polices 
   @font-face {
     font-family: 'rajdhani';
     src: url("../polices/Rajdhani-Medium.ttf");
@@ -22,12 +22,11 @@ body {
     src: url("../polices/SpaceGrotesk-Regular.ttf");
   }
 
-/* Variables à utiliser tout au long du projet */
 $h1-font : "rajdhani", sans-serif;
 $normal-font : "space grotesk regular", sans-serif;
 $button-font : "rajdhani", sans-serif;
 
-/* Mise en place des icônes fixes à droite de l'écran */
+// Mise en place des icônes fixes à droite de l'écran 
   .vertical-icons {
     position: fixed;
     right: 0;
@@ -60,7 +59,7 @@ $button-font : "rajdhani", sans-serif;
             width: 30px;}
     }
 
-    /* Format mobile des icônes verticales */
+    // Format mobile des icônes verticales
     @media screen and (max-width : 400px) {
         .vertical-icons {
             position: fixed;
@@ -70,37 +69,39 @@ $button-font : "rajdhani", sans-serif;
             z-index: 1;
           }
         
-          .vertical-icons {
-                a .social-network {
-                    display: flex;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    transform: scale(0.8);
+        .vertical-icons {
+            a .social-network {
+                display: flex;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                transform: scale(0.8);
+                .social-network:hover {
+                    filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
                 }
-                    a .social-network:hover {
-                        filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
-                    }
-        
-                .bat-icon {
-                    transform: scale(2.5);
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                }
-                    .bat-icon:hover {
-                        filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
-                    }
-        
-                img {
-                    width: 30px;}
             }
+        
+            .bat-icon {
+                transform: scale(2.5);
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+                .bat-icon:hover {
+                    filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
+                }
+        
+            img {
+                width: 30px;}
+        }
     }
 
-/* Les styles header */
+// Les styles du header 
     nav {
         display: flex;
+        position: relative;
         padding-top : 20px;
         padding-bottom : 20px;
         align-items: center;
+        overflow: visible;
     }
     nav {
         .home-icon {
@@ -114,7 +115,7 @@ $button-font : "rajdhani", sans-serif;
         .menu-home {
             size: 30px;
             display: flex;
-            margin-left: 50%;
+            margin-left:60%;
         }
         
         .menu-button {
@@ -131,19 +132,36 @@ $button-font : "rajdhani", sans-serif;
                 color: white;
             }
         }
+
             .menu-button:hover,
             .menu-button:focus {
                 text-decoration: underline;
                 color: #f8f184;
             }
+        
+            .menu-dropdown {
+                display: none;
+                white-space: nowrap;
+                li a {
+                    font-size: 16px;
+                    font-weight: none;
+                    text-decoration: none;
+                    font-family: $normal-font;
+                    color: #C4C4C4;
+                  }
+                a:hover {
+                    text-decoration : underline;
+                    color : #f8f184;
+                }
+              }
 
         .menu-home:hover .menu-dropdown,
         .menu-home:focus .menu-dropdown {
+            position: absolute;
             display: block;
             background-color: #0d0e09be;
-            margin-top: 25px;
-            margin-left: -260px;
-            padding: 10px 10px 10px 20px;
+            margin-top: 38px;
+            padding: 5px;
         }
 
         .game {
@@ -165,7 +183,7 @@ $button-font : "rajdhani", sans-serif;
                 }
             }
         }
-        
+
         .active {
             a {
                 text-decoration: underline;
@@ -173,3 +191,5 @@ $button-font : "rajdhani", sans-serif;
             }
         }
     }
+
+// L'élément suivant de la page Home qui est toujours dans le header

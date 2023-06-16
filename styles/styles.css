@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +8,6 @@ body {
   background-color: black;
 }
 
-/* Les polices */
 @font-face {
   font-family: "rajdhani";
   src: url("../polices/Rajdhani-Medium.ttf");
@@ -22,8 +20,6 @@ body {
   font-family: "space grotesk regular";
   src: url("../polices/SpaceGrotesk-Regular.ttf");
 }
-/* Variables à utiliser tout au long du projet */
-/* Mise en place des icônes fixes à droite de l'écran */
 .vertical-icons {
   position: fixed;
   right: 0;
@@ -53,7 +49,6 @@ body {
   width: 30px;
 }
 
-/* Format mobile des icônes verticales */
 @media screen and (max-width: 400px) {
   .vertical-icons {
     position: fixed;
@@ -68,7 +63,7 @@ body {
     margin-bottom: 20px;
     transform: scale(0.8);
   }
-  .vertical-icons a .social-network:hover {
+  .vertical-icons a .social-network .social-network:hover {
     filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
   }
   .vertical-icons .bat-icon {
@@ -83,12 +78,13 @@ body {
     width: 30px;
   }
 }
-/* Les styles header */
 nav {
   display: flex;
+  position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
   align-items: center;
+  overflow: visible;
 }
 
 nav .home-icon {
@@ -101,7 +97,7 @@ nav .home-icon img:hover {
 nav .menu-home {
   size: 30px;
   display: flex;
-  margin-left: 50%;
+  margin-left: 60%;
 }
 nav .menu-button {
   background: none;
@@ -122,13 +118,28 @@ nav .menu-button:focus {
   text-decoration: underline;
   color: #f8f184;
 }
+nav .menu-dropdown {
+  display: none;
+  white-space: nowrap;
+}
+nav .menu-dropdown li a {
+  font-size: 16px;
+  font-weight: none;
+  text-decoration: none;
+  font-family: "space grotesk regular", sans-serif;
+  color: #C4C4C4;
+}
+nav .menu-dropdown a:hover {
+  text-decoration: underline;
+  color: #f8f184;
+}
 nav .menu-home:hover .menu-dropdown,
 nav .menu-home:focus .menu-dropdown {
+  position: absolute;
   display: block;
   background-color: rgba(13, 14, 9, 0.7450980392);
-  margin-top: 25px;
-  margin-left: -260px;
-  padding: 10px 10px 10px 20px;
+  margin-top: 38px;
+  padding: 5px;
 }
 nav .game .game-button {
   background: none;
