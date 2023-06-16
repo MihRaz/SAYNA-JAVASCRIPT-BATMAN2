@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+/* Les polices */
+  @font-face {
+    font-family: 'rajdhani';
+    src: url("../polices/Rajdhani-Medium.ttf");
+  }
+  @font-face {
+    font-family: 'space grotesk bold';
+    src: url("../polices/SpaceGrotesk-Bold.ttf");
+  }
+  @font-face {
+    font-family: 'space grotesk regular';
+    src: url("../polices/SpaceGrotesk-Regular.ttf");
+  }
+
+/* Variables à utiliser tout au long du projet */
+$h1-font : "rajdhani", sans-serif;
+$normal-font : "space grotesk regular", sans-serif;
+$button-font : "rajdhani", sans-serif;
+
+/* Mise en place des icônes fixes à droite de l'écran */
+  .vertical-icons {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    left: 90%;
+    z-index: 1;
+  }
+
+  .vertical-icons {
+        a .social-network {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transform: scale(0.8);
+        }
+            a .social-network:hover {
+                filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
+            }
+
+        .bat-icon {
+            transform: scale(3.0);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+            .bat-icon:hover {
+                filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
+            }
+
+        img {
+            width: 30px;}
+    }
+
+    /* Format mobile des icônes verticales */
+    @media screen and (max-width : 400px) {
+        .vertical-icons {
+            position: fixed;
+            right: 0;
+            top: 30%;
+            left: 89%;
+            z-index: 1;
+          }
+        
+          .vertical-icons {
+                a .social-network {
+                    display: flex;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    transform: scale(0.8);
+                }
+                    a .social-network:hover {
+                        filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
+                    }
+        
+                .bat-icon {
+                    transform: scale(2.5);
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                    .bat-icon:hover {
+                        filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
+                    }
+        
+                img {
+                    width: 30px;}
+            }
+    }
+
+/* Les styles header */
+    nav {
+        display: flex;
+        padding-top : 20px;
+        padding-bottom : 20px;
+        align-items: center;
+    }
+    nav {
+        .home-icon {
+            padding: 0 5px;
+            transition: 0.3s;
+            img:hover {
+                filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
+              }
+          }
+
+        .menu-home {
+            size: 30px;
+            display: flex;
+            margin-left: 50%;
+        }
+        
+        .menu-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fdfcfc;
+            font-family: $button-font;
+            font-size: 20px;
+            width: 90px;
+            height: 50px;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+            .menu-button:hover,
+            .menu-button:focus {
+                text-decoration: underline;
+                color: #f8f184;
+            }
+
+        .menu-home:hover .menu-dropdown,
+        .menu-home:focus .menu-dropdown {
+            display: block;
+            background-color: #0d0e09be;
+            margin-top: 25px;
+            margin-left: -260px;
+            padding: 10px 10px 10px 20px;
+        }
+
+        .game {
+            .game-button {
+                background: none;
+                border: none;
+                color: #fdfcfc;
+                font-family: $button-font;
+                font-size: 20px;
+                width: 90px;
+                height: 50px;
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+                a:hover {
+                    text-decoration: underline;
+                    color: #f8f184;
+                }
+            }
+        }
+        
+        .active {
+            a {
+                text-decoration: underline;
+                color : #f8f184;
+            }
+        }
+    }
