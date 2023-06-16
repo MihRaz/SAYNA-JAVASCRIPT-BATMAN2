@@ -49,7 +49,7 @@ body {
   width: 30px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .vertical-icons {
     position: fixed;
     right: 0;
@@ -78,6 +78,19 @@ body {
     width: 30px;
   }
 }
+header {
+  background-image: url("../Illustrations/Bathome1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  border: 1px solid transparent;
+}
+header .down-header {
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 nav {
   display: flex;
   position: relative;
@@ -85,6 +98,7 @@ nav {
   padding-bottom: 20px;
   align-items: center;
   overflow: visible;
+  width: 100%;
 }
 
 nav .home-icon {
@@ -94,71 +108,113 @@ nav .home-icon {
 nav .home-icon img:hover {
   filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
 }
-nav .menu-home {
-  size: 30px;
+nav .menu {
   display: flex;
-  margin-left: 60%;
+  position: absolute;
+  right: 0;
 }
-nav .menu-button {
+nav .menu .menu-home {
+  display: flex;
+}
+nav .menu .menu-button {
   background: none;
   border: none;
   cursor: pointer;
   color: #fdfcfc;
   font-family: "rajdhani", sans-serif;
   font-size: 20px;
-  width: 90px;
-  height: 50px;
 }
-nav .menu-button a {
+nav .menu .menu-button a {
   text-decoration: none;
   color: white;
 }
-nav .menu-button:hover,
-nav .menu-button:focus {
+nav .menu .menu-button:hover,
+nav .menu .menu-button:focus {
   text-decoration: underline;
   color: #f8f184;
 }
-nav .menu-dropdown {
+nav .menu .menu-dropdown {
   display: none;
   white-space: nowrap;
 }
-nav .menu-dropdown li a {
+nav .menu .menu-dropdown li {
+  display: flex;
+}
+nav .menu .menu-dropdown li a {
   font-size: 16px;
   font-weight: none;
   text-decoration: none;
   font-family: "space grotesk regular", sans-serif;
   color: #C4C4C4;
 }
-nav .menu-dropdown a:hover {
+nav .menu .menu-dropdown li a:hover {
   text-decoration: underline;
   color: #f8f184;
 }
-nav .menu-home:hover .menu-dropdown,
-nav .menu-home:focus .menu-dropdown {
+nav .menu .menu-home:hover .menu-dropdown,
+nav .menu .menu-home:focus .menu-dropdown {
   position: absolute;
   display: block;
   background-color: rgba(13, 14, 9, 0.7450980392);
-  margin-top: 38px;
-  padding: 5px;
+  margin-top: 20px;
+  padding: 10px;
+  margin-left: -100px;
 }
-nav .game .game-button {
+nav .menu .menu-game .game-button {
   background: none;
   border: none;
   color: #fdfcfc;
   font-family: "rajdhani", sans-serif;
   font-size: 20px;
-  width: 90px;
-  height: 50px;
+  right: 0;
+  padding-left: 50px;
 }
-nav .game .game-button a {
+nav .menu .menu-game .game-button a {
   text-decoration: none;
   color: white;
 }
-nav .game .game-button a:hover {
+nav .menu .menu-game .game-button a:hover {
   text-decoration: underline;
   color: #f8f184;
 }
-nav .active a {
+nav .menu .active a {
   text-decoration: underline;
   color: #f8f184;
+}
+
+.header-container {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 200px;
+  text-align: center;
+}
+.header-container p {
+  font-family: "space grotesk regular", sans-serif;
+  color: white;
+  padding-bottom: 50px;
+}
+.header-container .header-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header-container .header-buttons a {
+  text-decoration: none;
+  color: white;
+}
+.header-container .header-buttons button {
+  width: 170px;
+  padding: 10px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  font-family: "rajdhani", sans-serif;
+  font-size: 18px;
+  background: linear-gradient(to right, rgba(237, 220, 239, 0.25) 40%, rgba(237, 220, 239, 0.1) 60%);
+}
+.header-container .header-buttons button:hover {
+  background: linear-gradient(to right, rgba(237, 220, 239, 0.6), rgba(237, 220, 239, 0.2));
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.8);
 }/*# sourceMappingURL=styles.css.map */

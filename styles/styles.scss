@@ -60,7 +60,7 @@ $button-font : "rajdhani", sans-serif;
     }
 
     // Format mobile des icônes verticales
-    @media screen and (max-width : 400px) {
+    @media screen and (max-width : 600px) {
         .vertical-icons {
             position: fixed;
             right: 0;
@@ -95,6 +95,19 @@ $button-font : "rajdhani", sans-serif;
     }
 
 // Les styles du header 
+header {
+    background-image: url("../Illustrations/Bathome1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    border: 1px solid transparent;
+    .down-header {
+        position: absolute;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
     nav {
         display: flex;
         position: relative;
@@ -102,6 +115,7 @@ $button-font : "rajdhani", sans-serif;
         padding-bottom : 20px;
         align-items: center;
         overflow: visible;
+        width: 100%;
     }
     nav {
         .home-icon {
@@ -111,11 +125,12 @@ $button-font : "rajdhani", sans-serif;
                 filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
               }
           }
-
+     .menu {
+        display: flex;
+        position: absolute;
+        right: 0;
         .menu-home {
-            size: 30px;
             display: flex;
-            margin-left:60%;
         }
         
         .menu-button {
@@ -125,8 +140,6 @@ $button-font : "rajdhani", sans-serif;
             color: #fdfcfc;
             font-family: $button-font;
             font-size: 20px;
-            width: 90px;
-            height: 50px;
             a {
                 text-decoration: none;
                 color: white;
@@ -142,16 +155,19 @@ $button-font : "rajdhani", sans-serif;
             .menu-dropdown {
                 display: none;
                 white-space: nowrap;
-                li a {
-                    font-size: 16px;
-                    font-weight: none;
-                    text-decoration: none;
-                    font-family: $normal-font;
-                    color: #C4C4C4;
-                  }
-                a:hover {
-                    text-decoration : underline;
-                    color : #f8f184;
+                li {
+                    display: flex;
+                    a {
+                        font-size: 16px;
+                        font-weight: none;
+                        text-decoration: none;
+                        font-family: $normal-font;
+                        color: #C4C4C4;
+                    }
+                    a:hover {
+                        text-decoration : underline;
+                        color : #f8f184;
+                    }
                 }
               }
 
@@ -160,19 +176,20 @@ $button-font : "rajdhani", sans-serif;
             position: absolute;
             display: block;
             background-color: #0d0e09be;
-            margin-top: 38px;
-            padding: 5px;
+            margin-top: 20px;
+            padding: 10px;
+            margin-left: -100px;
         }
 
-        .game {
+        .menu-game {
             .game-button {
                 background: none;
                 border: none;
                 color: #fdfcfc;
                 font-family: $button-font;
                 font-size: 20px;
-                width: 90px;
-                height: 50px;
+                right: 0;
+                padding-left: 50px;
                 a {
                     text-decoration: none;
                     color: white;
@@ -183,13 +200,51 @@ $button-font : "rajdhani", sans-serif;
                 }
             }
         }
-
+        // Ici, on ajoute le style du menu quand on est sur la page active
         .active {
             a {
                 text-decoration: underline;
                 color : #f8f184;
             }
         }
+     }
     }
 
 // L'élément suivant de la page Home qui est toujours dans le header
+.header-container {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    text-align: center;
+    p {
+        font-family: $normal-font;
+        color: white;
+        padding-bottom: 50px;
+    }
+    .header-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        button {
+            width: 170px;
+            padding: 10px 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            border: none;
+            font-family: $button-font;
+            font-size: 18px;
+            background: linear-gradient(to right, rgba(237, 220, 239, 0.250) 40%, rgba(237, 220, 239, 0.1) 60%);
+        }
+        button:hover {
+            background: linear-gradient(to right, rgba(237, 220, 239, 0.6), rgba(237, 220, 239, 0.2));
+            box-shadow: 5px 0 5px rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
