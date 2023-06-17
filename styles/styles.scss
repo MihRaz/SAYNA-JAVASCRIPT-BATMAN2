@@ -105,6 +105,7 @@ $button-font : "rajdhani", sans-serif;
     height: 100%;
     width: 3px;
     background-color: rgba(196, 196, 196, 0.2);
+    z-index: 1;
 }
 .line-right {
     position: absolute;
@@ -113,6 +114,7 @@ $button-font : "rajdhani", sans-serif;
     height: 100%;
     width: 3px;
     background-color: rgba(196, 196, 196, 0.2);
+    z-index: 1;
 }
 
 // Les styles du header 
@@ -283,12 +285,42 @@ section {
         margin-right: 102px;
         .section-content {
             margin-left: 75px;
-            margin-right: 200px;
+            margin-right: 150px;
             color: white;
             text-align: justify;
             padding-bottom: 30px;
+            .nemesis {
+                position: relative;
+                display: flex;
+                padding-top: 80px;
+                width: 220px;
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 150px;
+                    height: auto;
+                }
+            }
+            .alliés {
+                position: relative;
+                width: calc(100% + 150px + 102px);
+                img {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 400px;
+                    height: auto;
+                    z-index: 0;
+                }
+            }
             h1 {
                 font-family: $h1-font;
+                font-size: 36px;
+            }
+            p {
+                padding-top: 20px;
+                text-align: justify;
             }
             .normal-text {
                 font-family: $normal-font;
@@ -304,6 +336,7 @@ section {
                 position: relative;
                 transform: scale(0.8);
                 transition: 0.2s ease;
+                z-index: 1;
                 .actor {
                     position: absolute;
                     display: flex;
@@ -330,7 +363,7 @@ section {
                         padding: 20px 50px 20px 50px;
                         border-radius: 40px;
                         margin-left: 60px;
-                        background-image: linear-gradient(to right, rgb(255, 255, 255, 0.2) 20%,rgb(255, 0, 0,0.1) 50%);
+                        background-image: linear-gradient(to right, rgb(255, 255, 255, 0.4) 0%, rgb(255, 0, 0,0.1) 80%,rgb(255, 0, 0,0.15) 100%);
                     }
                 }
             }
@@ -338,6 +371,110 @@ section {
                 transform: scale(0.9);
                 .actor {
                     opacity: 1;
+                }
+            }
+        }
+        .justice-league {
+            margin-left : -102px;
+            width: 98.7vw;
+        }
+        .synopsis-video {
+            padding-top: 50px;
+            margin-right: -75px;
+            .section-multimedia {
+                align-items: center;
+                justify-content: space-between;
+                width: 85%;
+                margin: auto;
+                display: flex;
+                padding-bottom: 20px;
+                transform: scale(0.9);
+                .bat-synopsis {
+                    display: flex;
+                    width: 500px;
+                    padding-right: 5px;
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    background-image: linear-gradient(100deg, rgb(237, 222, 191, 0.3), rgb(25, 88, 125, 0.3));
+                    .trailer-image {
+                        padding-right: 8px;
+                        img {
+                            height: 100%;
+                            width: auto;
+                        }
+                    }
+                    .batman-begins {
+                        p {
+                            font-family: $normal-font;
+                            font-size: 11px;
+                            padding: 7px;
+                        }
+                    }
+                }
+            }
+            .trailer-video {
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Le footer dans lequel il y a le formulaire
+footer {
+    position: absolute;
+    width: 100%;
+    .form-container {
+        position: relative;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-image: linear-gradient(100deg, rgb(237, 222, 191, 0.3), rgb(25, 88, 125, 0.4));
+        border-top: 2px solid rgb(196, 196, 196, 0.2);
+        border-bottom: 2px solid rgb(196, 196, 196, 0.2);
+        .form {
+            width: 45%;
+            margin: auto;
+            h2 {
+                font-family: $normal-font;
+                font-weight: bold;
+                text-align: center;
+                color: white;
+            }
+            label {
+                font-family: $normal-font;
+                color: white;
+            }
+            input,
+            select,
+            option,
+            textarea,
+            .form-text,
+            ::placeholder {
+                font-family: $normal-font;
+                background-color: inherit;
+                color: #C4C4C4;
+            }
+            input,
+            select,
+            textarea {
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid rgb(196, 196, 196, 0.5);
+            }
+            input[type="checkbox"],
+            input[type="radio"] {
+                width: auto;
+            }
+            .choice {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                display: inline-block;
+                input {
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                label {
+                    padding: 10px 20px;
+                    background-image: linear-gradient(100deg, rgb(237, 222, 191, 0.3), rgb(25, 88, 125, 0.4));
                 }
             }
         }

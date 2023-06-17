@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -88,6 +89,7 @@ body {
   height: 100%;
   width: 3px;
   background-color: rgba(196, 196, 196, 0.2);
+  z-index: 1;
 }
 
 .line-right {
@@ -97,6 +99,7 @@ body {
   height: 100%;
   width: 3px;
   background-color: rgba(196, 196, 196, 0.2);
+  z-index: 1;
 }
 
 header {
@@ -255,13 +258,43 @@ section .section-container {
 }
 section .section-container .section-content {
   margin-left: 75px;
-  margin-right: 200px;
+  margin-right: 150px;
   color: white;
   text-align: justify;
   padding-bottom: 30px;
 }
+section .section-container .section-content .nemesis {
+  position: relative;
+  display: flex;
+  padding-top: 80px;
+  width: 220px;
+}
+section .section-container .section-content .nemesis img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: auto;
+}
+section .section-container .section-content .alliés {
+  position: relative;
+  width: calc(100% + 150px + 102px);
+}
+section .section-container .section-content .alliés img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: auto;
+  z-index: 0;
+}
 section .section-container .section-content h1 {
   font-family: "rajdhani", sans-serif;
+  font-size: 36px;
+}
+section .section-container .section-content p {
+  padding-top: 20px;
+  text-align: justify;
 }
 section .section-container .section-content .normal-text {
   font-family: "space grotesk regular", sans-serif;
@@ -277,6 +310,7 @@ section .section-container .inline-images .characters {
   position: relative;
   transform: scale(0.8);
   transition: 0.2s ease;
+  z-index: 1;
 }
 section .section-container .inline-images .characters .actor {
   position: absolute;
@@ -305,11 +339,117 @@ section .section-container .inline-images .characters .actor p {
   padding: 20px 50px 20px 50px;
   border-radius: 40px;
   margin-left: 60px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 20%, rgba(255, 0, 0, 0.1) 50%);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 0, 0, 0.1) 80%, rgba(255, 0, 0, 0.15) 100%);
 }
 section .section-container .inline-images .characters:hover {
   transform: scale(0.9);
 }
 section .section-container .inline-images .characters:hover .actor {
   opacity: 1;
+}
+section .section-container .justice-league {
+  margin-left: -102px;
+  width: 98.7vw;
+}
+section .section-container .synopsis-video {
+  padding-top: 50px;
+  margin-right: -75px;
+}
+section .section-container .synopsis-video .section-multimedia {
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  padding-bottom: 20px;
+  transform: scale(0.9);
+}
+section .section-container .synopsis-video .section-multimedia .bat-synopsis {
+  display: flex;
+  width: 500px;
+  padding-right: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-image: linear-gradient(100deg, rgba(237, 222, 191, 0.3), rgba(25, 88, 125, 0.3));
+}
+section .section-container .synopsis-video .section-multimedia .bat-synopsis .trailer-image {
+  padding-right: 8px;
+}
+section .section-container .synopsis-video .section-multimedia .bat-synopsis .trailer-image img {
+  height: 100%;
+  width: auto;
+}
+section .section-container .synopsis-video .section-multimedia .bat-synopsis .batman-begins p {
+  font-family: "space grotesk regular", sans-serif;
+  font-size: 11px;
+  padding: 7px;
+}
+section .section-container .synopsis-video .trailer-video {
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+}
+footer .form-container {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: linear-gradient(100deg, rgba(237, 222, 191, 0.3), rgba(25, 88, 125, 0.4));
+  border-top: 2px solid rgba(196, 196, 196, 0.2);
+  border-bottom: 2px solid rgba(196, 196, 196, 0.2);
+}
+footer .form-container .form {
+  width: 45%;
+  margin: auto;
+}
+footer .form-container .form h2 {
+  font-family: "space grotesk regular", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+footer .form-container .form label {
+  font-family: "space grotesk regular", sans-serif;
+  color: white;
+}
+footer .form-container .form ::-moz-placeholder {
+  font-family: "space grotesk regular", sans-serif;
+  background-color: inherit;
+  color: #C4C4C4;
+}
+footer .form-container .form input,
+footer .form-container .form select,
+footer .form-container .form option,
+footer .form-container .form textarea,
+footer .form-container .form .form-text,
+footer .form-container .form ::placeholder {
+  font-family: "space grotesk regular", sans-serif;
+  background-color: inherit;
+  color: #C4C4C4;
+}
+footer .form-container .form input,
+footer .form-container .form select,
+footer .form-container .form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid rgba(196, 196, 196, 0.5);
+}
+footer .form-container .form input[type=checkbox],
+footer .form-container .form input[type=radio] {
+  width: auto;
+}
+footer .form-container .form .choice {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+footer .form-container .form .choice input {
+  opacity: 0;
+  cursor: pointer;
+}
+footer .form-container .form .choice label {
+  padding: 10px 20px;
+  background-image: linear-gradient(100deg, rgba(237, 222, 191, 0.3), rgba(25, 88, 125, 0.4));
 }/*# sourceMappingURL=styles.css.map */
