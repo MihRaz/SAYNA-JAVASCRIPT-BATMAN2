@@ -115,11 +115,13 @@ header {
         padding-bottom : 20px;
         align-items: center;
         overflow: visible;
-        width: 100%;
+        border-bottom: 3px solid rgba(196, 196, 196, 0.2);
+        margin: 0 102px 0 102px;
     }
     nav {
         .home-icon {
             padding: 0 5px;
+            margin-left: 50px;
             transition: 0.3s;
             img:hover {
                 filter: invert(4%) sepia(96%) saturate(4618%) hue-rotate(346deg) brightness(96%) contrast(111%);
@@ -129,6 +131,7 @@ header {
         display: flex;
         position: absolute;
         right: 0;
+        margin-right: 50px;
         .menu-home {
             display: flex;
         }
@@ -150,6 +153,7 @@ header {
             .menu-button:focus {
                 text-decoration: underline;
                 color: #f8f184;
+                font-weight: bold;
             }
         
             .menu-dropdown {
@@ -197,6 +201,7 @@ header {
                 a:hover {
                     text-decoration: underline;
                     color: #f8f184;
+                    font-weight: bold;
                 }
             }
         }
@@ -205,6 +210,7 @@ header {
             a {
                 text-decoration: underline;
                 color : #f8f184;
+                font-weight: bold;
             }
         }
      }
@@ -239,7 +245,7 @@ header {
             border: none;
             font-family: $button-font;
             font-size: 18px;
-            background: linear-gradient(to right, rgba(237, 220, 239, 0.250) 40%, rgba(237, 220, 239, 0.1) 60%);
+            background: linear-gradient(to right, rgba(237, 220, 239, 0.250) 40%, rgba(237, 220, 239, 0.1) 70%);
         }
         button:hover {
             background: linear-gradient(to right, rgba(237, 220, 239, 0.6), rgba(237, 220, 239, 0.2));
@@ -248,3 +254,4 @@ header {
     }
 }
 
+// Nous entrons maintenant dans la première section de la page 

@@ -98,11 +98,13 @@ nav {
   padding-bottom: 20px;
   align-items: center;
   overflow: visible;
-  width: 100%;
+  border-bottom: 3px solid rgba(196, 196, 196, 0.2);
+  margin: 0 102px 0 102px;
 }
 
 nav .home-icon {
   padding: 0 5px;
+  margin-left: 50px;
   transition: 0.3s;
 }
 nav .home-icon img:hover {
@@ -112,6 +114,7 @@ nav .menu {
   display: flex;
   position: absolute;
   right: 0;
+  margin-right: 50px;
 }
 nav .menu .menu-home {
   display: flex;
@@ -132,6 +135,7 @@ nav .menu .menu-button:hover,
 nav .menu .menu-button:focus {
   text-decoration: underline;
   color: #f8f184;
+  font-weight: bold;
 }
 nav .menu .menu-dropdown {
   display: none;
@@ -176,10 +180,12 @@ nav .menu .menu-game .game-button a {
 nav .menu .menu-game .game-button a:hover {
   text-decoration: underline;
   color: #f8f184;
+  font-weight: bold;
 }
 nav .menu .active a {
   text-decoration: underline;
   color: #f8f184;
+  font-weight: bold;
 }
 
 .header-container {
@@ -212,7 +218,7 @@ nav .menu .active a {
   border: none;
   font-family: "rajdhani", sans-serif;
   font-size: 18px;
-  background: linear-gradient(to right, rgba(237, 220, 239, 0.25) 40%, rgba(237, 220, 239, 0.1) 60%);
+  background: linear-gradient(to right, rgba(237, 220, 239, 0.25) 40%, rgba(237, 220, 239, 0.1) 70%);
 }
 .header-container .header-buttons button:hover {
   background: linear-gradient(to right, rgba(237, 220, 239, 0.6), rgba(237, 220, 239, 0.2));
