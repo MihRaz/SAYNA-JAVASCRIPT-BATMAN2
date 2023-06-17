@@ -6,6 +6,7 @@
 
 body {
     background-color: black;
+    position: relative;
 }
 
 // Les polices 
@@ -30,8 +31,9 @@ $button-font : "rajdhani", sans-serif;
   .vertical-icons {
     position: fixed;
     right: 0;
-    top: 30%;
-    left: 90%;
+    margin-right: 88px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
   }
 
@@ -64,8 +66,9 @@ $button-font : "rajdhani", sans-serif;
         .vertical-icons {
             position: fixed;
             right: 0;
-            top: 30%;
-            left: 89%;
+            margin-right: 2%;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 1;
           }
         
@@ -94,12 +97,30 @@ $button-font : "rajdhani", sans-serif;
         }
     }
 
+// Les lignes de bordure de gauche et de droite
+.line-left {
+    position: absolute;
+    left: 0;
+    margin-left: 102px;
+    height: 100%;
+    width: 3px;
+    background-color: rgba(196, 196, 196, 0.2);
+}
+.line-right {
+    position: absolute;
+    right: 0;
+    margin-right: 102px;
+    height: 100%;
+    width: 3px;
+    background-color: rgba(196, 196, 196, 0.2);
+}
+
 // Les styles du header 
 header {
     background-image: url("../Illustrations/Bathome1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
+    background-position: top right;
     border: 1px solid transparent;
     .down-header {
         position: absolute;
@@ -111,8 +132,7 @@ header {
     nav {
         display: flex;
         position: relative;
-        padding-top : 20px;
-        padding-bottom : 20px;
+        height: 132px;
         align-items: center;
         overflow: visible;
         border-bottom: 3px solid rgba(196, 196, 196, 0.2);
@@ -221,8 +241,8 @@ header {
     position: relative;
     width: 50%;
     margin: auto;
-    margin-top: 150px;
-    margin-bottom: 200px;
+    margin-top: 300px;
+    margin-bottom: 300px;
     text-align: center;
     p {
         font-family: $normal-font;
@@ -255,3 +275,71 @@ header {
 }
 
 // Nous entrons maintenant dans la première section de la page 
+section {
+    margin-top: 75px;
+    position: relative;
+    .section-container {
+        margin-left: 102px;
+        margin-right: 102px;
+        .section-content {
+            margin-left: 75px;
+            margin-right: 200px;
+            color: white;
+            text-align: justify;
+            padding-bottom: 30px;
+            h1 {
+                font-family: $h1-font;
+            }
+            .normal-text {
+                font-family: $normal-font;
+            }
+        }
+        .inline-images {
+            margin-left: 75px;
+            margin-right: 75px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            .characters {
+                position: relative;
+                transform: scale(0.8);
+                transition: 0.2s ease;
+                .actor {
+                    position: absolute;
+                    display: flex;
+                    bottom: 0;
+                    height: 25%;
+                    width: 100%;
+                    align-items: center;
+                    border-top: 3px solid rgb(196, 196, 196, 0.1);
+                    opacity: 0;
+                    transition: opacity 0.2s ease;
+                    img {
+                        display: flex;
+                        width: 22%;
+                        height: auto;
+                        border-radius: 50%;
+                        margin-left: 30px;
+                        margin-bottom: 25px;
+                        z-index: 2;
+                    }
+                    p {
+                        position: absolute;
+                        font-family: $normal-font;
+                        font-size: 10px;
+                        padding: 20px 50px 20px 50px;
+                        border-radius: 40px;
+                        margin-left: 60px;
+                        background-image: linear-gradient(to right, rgb(255, 255, 255, 0.2) 20%,rgb(255, 0, 0,0.1) 50%);
+                    }
+                }
+            }
+            .characters:hover {
+                transform: scale(0.9);
+                .actor {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

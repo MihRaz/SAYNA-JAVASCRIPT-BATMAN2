@@ -6,6 +6,7 @@
 
 body {
   background-color: black;
+  position: relative;
 }
 
 @font-face {
@@ -23,8 +24,9 @@ body {
 .vertical-icons {
   position: fixed;
   right: 0;
-  top: 30%;
-  left: 90%;
+  margin-right: 88px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1;
 }
 
@@ -53,8 +55,9 @@ body {
   .vertical-icons {
     position: fixed;
     right: 0;
-    top: 30%;
-    left: 89%;
+    margin-right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
   }
   .vertical-icons a .social-network {
@@ -78,11 +81,29 @@ body {
     width: 30px;
   }
 }
+.line-left {
+  position: absolute;
+  left: 0;
+  margin-left: 102px;
+  height: 100%;
+  width: 3px;
+  background-color: rgba(196, 196, 196, 0.2);
+}
+
+.line-right {
+  position: absolute;
+  right: 0;
+  margin-right: 102px;
+  height: 100%;
+  width: 3px;
+  background-color: rgba(196, 196, 196, 0.2);
+}
+
 header {
   background-image: url("../Illustrations/Bathome1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
+  background-position: top right;
   border: 1px solid transparent;
 }
 header .down-header {
@@ -94,8 +115,7 @@ header .down-header {
 nav {
   display: flex;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: 132px;
   align-items: center;
   overflow: visible;
   border-bottom: 3px solid rgba(196, 196, 196, 0.2);
@@ -192,8 +212,8 @@ nav .menu .active a {
   position: relative;
   width: 50%;
   margin: auto;
-  margin-top: 150px;
-  margin-bottom: 200px;
+  margin-top: 300px;
+  margin-bottom: 300px;
   text-align: center;
 }
 .header-container p {
@@ -223,4 +243,73 @@ nav .menu .active a {
 .header-container .header-buttons button:hover {
   background: linear-gradient(to right, rgba(237, 220, 239, 0.6), rgba(237, 220, 239, 0.2));
   box-shadow: 5px 0 5px rgba(0, 0, 0, 0.8);
+}
+
+section {
+  margin-top: 75px;
+  position: relative;
+}
+section .section-container {
+  margin-left: 102px;
+  margin-right: 102px;
+}
+section .section-container .section-content {
+  margin-left: 75px;
+  margin-right: 200px;
+  color: white;
+  text-align: justify;
+  padding-bottom: 30px;
+}
+section .section-container .section-content h1 {
+  font-family: "rajdhani", sans-serif;
+}
+section .section-container .section-content .normal-text {
+  font-family: "space grotesk regular", sans-serif;
+}
+section .section-container .inline-images {
+  margin-left: 75px;
+  margin-right: 75px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+section .section-container .inline-images .characters {
+  position: relative;
+  transform: scale(0.8);
+  transition: 0.2s ease;
+}
+section .section-container .inline-images .characters .actor {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  height: 25%;
+  width: 100%;
+  align-items: center;
+  border-top: 3px solid rgba(196, 196, 196, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+section .section-container .inline-images .characters .actor img {
+  display: flex;
+  width: 22%;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  z-index: 2;
+}
+section .section-container .inline-images .characters .actor p {
+  position: absolute;
+  font-family: "space grotesk regular", sans-serif;
+  font-size: 10px;
+  padding: 20px 50px 20px 50px;
+  border-radius: 40px;
+  margin-left: 60px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2) 20%, rgba(255, 0, 0, 0.1) 50%);
+}
+section .section-container .inline-images .characters:hover {
+  transform: scale(0.9);
+}
+section .section-container .inline-images .characters:hover .actor {
+  opacity: 1;
 }/*# sourceMappingURL=styles.css.map */
