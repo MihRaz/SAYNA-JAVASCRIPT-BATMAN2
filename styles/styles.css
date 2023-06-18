@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +27,7 @@ body {
   margin-right: 88px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 3;
 }
 
 .vertical-icons a .social-network {
@@ -89,7 +88,6 @@ body {
   height: 100%;
   width: 3px;
   background-color: rgba(196, 196, 196, 0.2);
-  z-index: 1;
 }
 
 .line-right {
@@ -99,7 +97,6 @@ body {
   height: 100%;
   width: 3px;
   background-color: rgba(196, 196, 196, 0.2);
-  z-index: 1;
 }
 
 header {
@@ -252,6 +249,14 @@ section {
   margin-top: 75px;
   position: relative;
 }
+section .bat-right img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 750px;
+  width: 300px;
+  height: auto;
+}
 section .section-container {
   margin-left: 102px;
   margin-right: 102px;
@@ -276,18 +281,6 @@ section .section-container .section-content .nemesis img {
   width: 150px;
   height: auto;
 }
-section .section-container .section-content .alliés {
-  position: relative;
-  width: calc(100% + 150px + 102px);
-}
-section .section-container .section-content .alliés img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 400px;
-  height: auto;
-  z-index: 0;
-}
 section .section-container .section-content h1 {
   font-family: "rajdhani", sans-serif;
   font-size: 36px;
@@ -299,31 +292,56 @@ section .section-container .section-content p {
 section .section-container .section-content .normal-text {
   font-family: "space grotesk regular", sans-serif;
 }
-section .section-container .inline-images {
+section .section-container .inline-images,
+section .section-container .inline-images2,
+section .section-container .inline-images3 {
   margin-left: 75px;
   margin-right: 75px;
   display: flex;
   justify-content: center;
   text-align: center;
 }
-section .section-container .inline-images .characters {
+section .section-container .inline-images .characters,
+section .section-container .inline-images .characters2,
+section .section-container .inline-images .characters3,
+section .section-container .inline-images2 .characters,
+section .section-container .inline-images2 .characters2,
+section .section-container .inline-images2 .characters3,
+section .section-container .inline-images3 .characters,
+section .section-container .inline-images3 .characters2,
+section .section-container .inline-images3 .characters3 {
+  display: none;
   position: relative;
-  transform: scale(0.8);
   transition: 0.2s ease;
   z-index: 1;
 }
-section .section-container .inline-images .characters .actor {
+section .section-container .inline-images .characters .actor,
+section .section-container .inline-images .characters2 .actor,
+section .section-container .inline-images .characters3 .actor,
+section .section-container .inline-images2 .characters .actor,
+section .section-container .inline-images2 .characters2 .actor,
+section .section-container .inline-images2 .characters3 .actor,
+section .section-container .inline-images3 .characters .actor,
+section .section-container .inline-images3 .characters2 .actor,
+section .section-container .inline-images3 .characters3 .actor {
   position: absolute;
-  display: flex;
+  display: none;
   bottom: 0;
   height: 25%;
   width: 100%;
   align-items: center;
   border-top: 3px solid rgba(196, 196, 196, 0.1);
-  opacity: 0;
   transition: opacity 0.2s ease;
 }
-section .section-container .inline-images .characters .actor img {
+section .section-container .inline-images .characters .actor img,
+section .section-container .inline-images .characters2 .actor img,
+section .section-container .inline-images .characters3 .actor img,
+section .section-container .inline-images2 .characters .actor img,
+section .section-container .inline-images2 .characters2 .actor img,
+section .section-container .inline-images2 .characters3 .actor img,
+section .section-container .inline-images3 .characters .actor img,
+section .section-container .inline-images3 .characters2 .actor img,
+section .section-container .inline-images3 .characters3 .actor img {
   display: flex;
   width: 22%;
   height: auto;
@@ -332,7 +350,15 @@ section .section-container .inline-images .characters .actor img {
   margin-bottom: 25px;
   z-index: 2;
 }
-section .section-container .inline-images .characters .actor p {
+section .section-container .inline-images .characters .actor p,
+section .section-container .inline-images .characters2 .actor p,
+section .section-container .inline-images .characters3 .actor p,
+section .section-container .inline-images2 .characters .actor p,
+section .section-container .inline-images2 .characters2 .actor p,
+section .section-container .inline-images2 .characters3 .actor p,
+section .section-container .inline-images3 .characters .actor p,
+section .section-container .inline-images3 .characters2 .actor p,
+section .section-container .inline-images3 .characters3 .actor p {
   position: absolute;
   font-family: "space grotesk regular", sans-serif;
   font-size: 10px;
@@ -341,11 +367,44 @@ section .section-container .inline-images .characters .actor p {
   margin-left: 60px;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 0, 0, 0.1) 80%, rgba(255, 0, 0, 0.15) 100%);
 }
-section .section-container .inline-images .characters:hover {
-  transform: scale(0.9);
+section .section-container .inline-images .active,
+section .section-container .inline-images2 .active,
+section .section-container .inline-images3 .active {
+  display: block;
 }
-section .section-container .inline-images .characters:hover .actor {
-  opacity: 1;
+section .section-container .navigation,
+section .section-container .navigation2,
+section .section-container .navigation3 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+section .section-container .navigation .nav-items,
+section .section-container .navigation .nav-items2,
+section .section-container .navigation .nav-items3,
+section .section-container .navigation2 .nav-items,
+section .section-container .navigation2 .nav-items2,
+section .section-container .navigation2 .nav-items3,
+section .section-container .navigation3 .nav-items,
+section .section-container .navigation3 .nav-items2,
+section .section-container .navigation3 .nav-items3 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: 1px solid blue;
+}
+section .section-container .navigation .nav-items.active,
+section .section-container .navigation .nav-items2.active,
+section .section-container .navigation .nav-items3.active,
+section .section-container .navigation2 .nav-items.active,
+section .section-container .navigation2 .nav-items2.active,
+section .section-container .navigation2 .nav-items3.active,
+section .section-container .navigation3 .nav-items.active,
+section .section-container .navigation3 .nav-items2.active,
+section .section-container .navigation3 .nav-items3.active {
+  background-color: blue;
 }
 section .section-container .justice-league {
   margin-left: -102px;
@@ -358,14 +417,22 @@ section .section-container .synopsis-video {
 section .section-container .synopsis-video .section-multimedia {
   align-items: center;
   justify-content: space-between;
-  width: 85%;
+  width: 100%;
   margin: auto;
   display: flex;
   padding-bottom: 20px;
   transform: scale(0.9);
 }
+section .section-container .synopsis-video .section-multimedia .icon-arrow {
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+section .section-container .synopsis-video .section-multimedia .icon-arrow:hover {
+  transform: scale(1);
+}
 section .section-container .synopsis-video .section-multimedia .bat-synopsis {
   display: flex;
+  transform: scale(0.7);
   width: 500px;
   padding-right: 5px;
   border-top-right-radius: 20px;
@@ -388,6 +455,183 @@ section .section-container .synopsis-video .trailer-video {
   text-align: center;
 }
 
+@media screen and (min-width: 1025px) {
+  section {
+    margin-top: 75px;
+    position: relative;
+  }
+  section .bat-right img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 650px;
+    width: 350px;
+    height: auto;
+  }
+  section .section-container {
+    margin-left: 102px;
+    margin-right: 102px;
+  }
+  section .section-container .section-content {
+    margin-left: 75px;
+    margin-right: 150px;
+    color: white;
+    text-align: justify;
+    padding-bottom: 30px;
+  }
+  section .section-container .section-content .nemesis {
+    position: relative;
+    display: flex;
+    padding-top: 80px;
+    width: 220px;
+  }
+  section .section-container .section-content .nemesis img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+  }
+  section .section-container .section-content h1 {
+    font-family: "rajdhani", sans-serif;
+    font-size: 36px;
+  }
+  section .section-container .section-content p {
+    padding-top: 20px;
+    text-align: justify;
+  }
+  section .section-container .section-content .normal-text {
+    font-family: "space grotesk regular", sans-serif;
+  }
+  section .section-container .inline-images,
+  section .section-container .inline-images2,
+  section .section-container .inline-images3 {
+    margin-left: 75px;
+    margin-right: 75px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  section .section-container .inline-images .characters,
+  section .section-container .inline-images .characters2,
+  section .section-container .inline-images .characters3,
+  section .section-container .inline-images2 .characters,
+  section .section-container .inline-images2 .characters2,
+  section .section-container .inline-images2 .characters3,
+  section .section-container .inline-images3 .characters,
+  section .section-container .inline-images3 .characters2,
+  section .section-container .inline-images3 .characters3 {
+    transform: scale(0.8);
+    display: flex;
+    position: relative;
+    transition: 0.2s ease;
+    z-index: 1;
+  }
+  section .section-container .inline-images .characters .actor,
+  section .section-container .inline-images .characters2 .actor,
+  section .section-container .inline-images .characters3 .actor,
+  section .section-container .inline-images2 .characters .actor,
+  section .section-container .inline-images2 .characters2 .actor,
+  section .section-container .inline-images2 .characters3 .actor,
+  section .section-container .inline-images3 .characters .actor,
+  section .section-container .inline-images3 .characters2 .actor,
+  section .section-container .inline-images3 .characters3 .actor {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    height: 25%;
+    width: 100%;
+    align-items: center;
+    border-top: 3px solid rgba(196, 196, 196, 0.1);
+    transition: opacity 0.2s ease;
+  }
+  section .section-container .inline-images .characters .actor img,
+  section .section-container .inline-images .characters2 .actor img,
+  section .section-container .inline-images .characters3 .actor img,
+  section .section-container .inline-images2 .characters .actor img,
+  section .section-container .inline-images2 .characters2 .actor img,
+  section .section-container .inline-images2 .characters3 .actor img,
+  section .section-container .inline-images3 .characters .actor img,
+  section .section-container .inline-images3 .characters2 .actor img,
+  section .section-container .inline-images3 .characters3 .actor img {
+    display: flex;
+    width: 22%;
+    height: auto;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-bottom: 25px;
+    z-index: 2;
+  }
+  section .section-container .inline-images .characters .actor p,
+  section .section-container .inline-images .characters2 .actor p,
+  section .section-container .inline-images .characters3 .actor p,
+  section .section-container .inline-images2 .characters .actor p,
+  section .section-container .inline-images2 .characters2 .actor p,
+  section .section-container .inline-images2 .characters3 .actor p,
+  section .section-container .inline-images3 .characters .actor p,
+  section .section-container .inline-images3 .characters2 .actor p,
+  section .section-container .inline-images3 .characters3 .actor p {
+    position: absolute;
+    font-family: "space grotesk regular", sans-serif;
+    font-size: 10px;
+    padding: 20px 50px 20px 50px;
+    border-radius: 40px;
+    margin-left: 60px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 0, 0, 0.1) 80%, rgba(255, 0, 0, 0.15) 100%);
+  }
+  section .section-container .navigation,
+  section .section-container .navigation2,
+  section .section-container .navigation3 {
+    display: none;
+  }
+  section .section-container .justice-league {
+    margin-left: -102px;
+    width: 98.7vw;
+  }
+  section .section-container .synopsis-video {
+    padding-top: 50px;
+    margin-right: -75px;
+  }
+  section .section-container .synopsis-video .section-multimedia {
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    padding-bottom: 20px;
+    transform: scale(0.9);
+  }
+  section .section-container .synopsis-video .section-multimedia .icon-arrow {
+    transition: transform 0.2s ease;
+  }
+  section .section-container .synopsis-video .section-multimedia .icon-arrow:hover {
+    transform: scale(1.1);
+  }
+  section .section-container .synopsis-video .section-multimedia .bat-synopsis {
+    display: flex;
+    transform: scale(0.85);
+    width: 500px;
+    padding-right: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: linear-gradient(100deg, rgba(237, 222, 191, 0.3), rgba(25, 88, 125, 0.3));
+  }
+  section .section-container .synopsis-video .section-multimedia .bat-synopsis .trailer-image {
+    padding-right: 8px;
+  }
+  section .section-container .synopsis-video .section-multimedia .bat-synopsis .trailer-image img {
+    height: 100%;
+    width: auto;
+  }
+  section .section-container .synopsis-video .section-multimedia .bat-synopsis .batman-begins p {
+    font-family: "space grotesk regular", sans-serif;
+    font-size: 11px;
+    padding: 7px;
+  }
+  section .section-container .synopsis-video .trailer-video {
+    text-align: center;
+  }
+}
 footer {
   position: absolute;
   width: 100%;

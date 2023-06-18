@@ -34,7 +34,7 @@ $button-font : "rajdhani", sans-serif;
     margin-right: 88px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 3;
   }
 
   .vertical-icons {
@@ -105,7 +105,6 @@ $button-font : "rajdhani", sans-serif;
     height: 100%;
     width: 3px;
     background-color: rgba(196, 196, 196, 0.2);
-    z-index: 1;
 }
 .line-right {
     position: absolute;
@@ -114,7 +113,6 @@ $button-font : "rajdhani", sans-serif;
     height: 100%;
     width: 3px;
     background-color: rgba(196, 196, 196, 0.2);
-    z-index: 1;
 }
 
 // Les styles du header 
@@ -280,6 +278,16 @@ header {
 section {
     margin-top: 75px;
     position: relative;
+    .bat-right {
+        img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 750px;
+            width: 300px;
+            height: auto;
+        }
+    }
     .section-container {
         margin-left: 102px;
         margin-right: 102px;
@@ -302,18 +310,6 @@ section {
                     height: auto;
                 }
             }
-            .alliés {
-                position: relative;
-                width: calc(100% + 150px + 102px);
-                img {
-                    position: absolute;
-                    bottom: 0;
-                    right: 0;
-                    width: 400px;
-                    height: auto;
-                    z-index: 0;
-                }
-            }
             h1 {
                 font-family: $h1-font;
                 font-size: 36px;
@@ -326,26 +322,29 @@ section {
                 font-family: $normal-font;
             }
         }
-        .inline-images {
+        .inline-images,
+        .inline-images2,
+        .inline-images3 {
             margin-left: 75px;
             margin-right: 75px;
             display: flex;
             justify-content: center;
             text-align: center;
-            .characters {
+            .characters,
+            .characters2,
+            .characters3 {
+                display: none;
                 position: relative;
-                transform: scale(0.8);
                 transition: 0.2s ease;
                 z-index: 1;
                 .actor {
                     position: absolute;
-                    display: flex;
+                    display: none;
                     bottom: 0;
                     height: 25%;
                     width: 100%;
                     align-items: center;
                     border-top: 3px solid rgb(196, 196, 196, 0.1);
-                    opacity: 0;
                     transition: opacity 0.2s ease;
                     img {
                         display: flex;
@@ -367,12 +366,31 @@ section {
                     }
                 }
             }
-            .characters:hover {
-                transform: scale(0.9);
-                .actor {
-                    opacity: 1;
-                }
+            .active {
+                display: block;
             }
+        }
+        .navigation,
+        .navigation2,
+        .navigation3 {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 20px;
+            .nav-items,
+            .nav-items2,
+            .nav-items3 {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin: 0 5px;
+                border: 1px solid blue;
+            }
+            .nav-items.active,
+            .nav-items2.active,
+            .nav-items3.active {
+               background-color: blue;     
+            }  
         }
         .justice-league {
             margin-left : -102px;
@@ -384,13 +402,21 @@ section {
             .section-multimedia {
                 align-items: center;
                 justify-content: space-between;
-                width: 85%;
+                width: 100%;
                 margin: auto;
                 display: flex;
                 padding-bottom: 20px;
                 transform: scale(0.9);
+                .icon-arrow {
+                    transform: scale(0.9);
+                    transition: transform 0.2s ease;
+                }
+                .icon-arrow:hover {
+                    transform: scale(1);
+                }
                 .bat-synopsis {
                     display: flex;
+                    transform: scale(0.7);
                     width: 500px;
                     padding-right: 5px;
                     border-top-right-radius: 20px;
@@ -414,6 +440,159 @@ section {
             }
             .trailer-video {
                 text-align: center;
+            }
+        }
+    }
+}
+
+// Les sections pour une taille d'écran supérieure à 1024px 
+@media screen and (min-width: 1025px) {
+    section {
+        margin-top: 75px;
+        position: relative;
+        .bat-right {
+            img {
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin-top: 650px;
+                width: 350px;
+                height: auto;
+            }
+        }
+        .section-container {
+            margin-left: 102px;
+            margin-right: 102px;
+            .section-content {
+                margin-left: 75px;
+                margin-right: 150px;
+                color: white;
+                text-align: justify;
+                padding-bottom: 30px;
+                .nemesis {
+                    position: relative;
+                    display: flex;
+                    padding-top: 80px;
+                    width: 220px;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 150px;
+                        height: auto;
+                    }
+                }
+                h1 {
+                    font-family: $h1-font;
+                    font-size: 36px;
+                }
+                p {
+                    padding-top: 20px;
+                    text-align: justify;
+                }
+                .normal-text {
+                    font-family: $normal-font;
+                }
+            }
+            .inline-images,
+            .inline-images2,
+            .inline-images3 {
+                margin-left: 75px;
+                margin-right: 75px;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                .characters,
+                .characters2,
+                .characters3 {
+                    transform: scale(0.8);
+                    display: flex;
+                    position: relative;
+                    transition: 0.2s ease;
+                    z-index: 1;
+                    .actor {
+                        position: absolute;
+                        display: none;
+                        bottom: 0;
+                        height: 25%;
+                        width: 100%;
+                        align-items: center;
+                        border-top: 3px solid rgb(196, 196, 196, 0.1);
+                        transition: opacity 0.2s ease;
+                        img {
+                            display: flex;
+                            width: 22%;
+                            height: auto;
+                            border-radius: 50%;
+                            margin-left: 30px;
+                            margin-bottom: 25px;
+                            z-index: 2;
+                        }
+                        p {
+                            position: absolute;
+                            font-family: $normal-font;
+                            font-size: 10px;
+                            padding: 20px 50px 20px 50px;
+                            border-radius: 40px;
+                            margin-left: 60px;
+                            background-image: linear-gradient(to right, rgb(255, 255, 255, 0.4) 0%, rgb(255, 0, 0,0.1) 80%,rgb(255, 0, 0,0.15) 100%);
+                        }
+                    }
+                }
+            }
+            .navigation,
+            .navigation2,
+            .navigation3 {
+                display: none;
+            }
+            .justice-league {
+                margin-left : -102px;
+                width: 98.7vw;
+            }
+            .synopsis-video {
+                padding-top: 50px;
+                margin-right: -75px;
+                .section-multimedia {
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 85%;
+                    margin: auto;
+                    display: flex;
+                    padding-bottom: 20px;
+                    transform: scale(0.9);
+                    .icon-arrow {
+                        transition: transform 0.2s ease;
+                    }
+                    .icon-arrow:hover {
+                        transform: scale(1.1);
+                    }
+                    .bat-synopsis {
+                        display: flex;
+                        transform: scale(0.85);
+                        width: 500px;
+                        padding-right: 5px;
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        background-image: linear-gradient(100deg, rgb(237, 222, 191, 0.3), rgb(25, 88, 125, 0.3));
+                        .trailer-image {
+                            padding-right: 8px;
+                            img {
+                                height: 100%;
+                                width: auto;
+                            }
+                        }
+                        .batman-begins {
+                            p {
+                                font-family: $normal-font;
+                                font-size: 11px;
+                                padding: 7px;
+                            }
+                        }
+                    }
+                }
+                .trailer-video {
+                    text-align: center;
+                }
             }
         }
     }
